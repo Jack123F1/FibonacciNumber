@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 14.30.30706.0	    02/23/22 09:09:58
+Microsoft (R) Macro Assembler Version 14.30.30706.0	    02/23/22 09:40:19
 1Add and Subtract, Version 2         (AddSub2.asm	     Page 1 - 1
 
 
@@ -39,23 +39,23 @@ c:\Irvine\SmallWin.inc(11) : warning A4011:multiple .MODEL directives found : .M
  00000000			main PROC
  00000000  C7 05 00000000 R	mov    FIBNum,1
 	   00000001
- 0000000A  C7 05 00000008 R	mov    FIBNum+8,1
+ 0000000A  C7 05 00000004 R	mov    FIBNum+4,1
 	   00000001
  00000014  BE 00000000 R	mov    esi,OFFSET FIBNum
  00000019  B9 0000001C		mov    ecx,28
- 0000001E  83 C6 10		add    esi,16
- 00000021  8B 46 F0		mov    eax,[esi-16]
- 00000024  E8 00000000 E	call Writeint
+ 0000001E  83 C6 08		add    esi,8
+ 00000021  8B 46 F8		mov    eax,[esi-8]
+ 00000024  E8 00000000 E	call WriteDec
  00000029  E8 00000000 E	call Crlf
- 0000002E  8B 46 F8		mov    eax,[esi-8]
- 00000031  E8 00000000 E	call Writeint
+ 0000002E  8B 46 FC		mov    eax,[esi-4]
+ 00000031  E8 00000000 E	call WriteDec
  00000036  E8 00000000 E	call Crlf
  0000003B			L1:
- 0000003B  8B 46 F0		mov    eax,[esi-16]
- 0000003E  03 46 F8		add    eax,[esi-8]
+ 0000003B  8B 46 F8		mov    eax,[esi-8]
+ 0000003E  03 46 FC		add    eax,[esi-4]
  00000041  89 06		mov    [esi],eax
- 00000043  83 C6 08		add    esi,8
- 00000046  E8 00000000 E	call Writeint
+ 00000043  83 C6 04		add    esi,4
+ 00000046  E8 00000000 E	call WriteDec
  0000004B  E8 00000000 E	call Crlf
  00000050  E2 E9		loop L1
 					exit
@@ -63,7 +63,7 @@ c:\Irvine\SmallWin.inc(11) : warning A4011:multiple .MODEL directives found : .M
  00000054  E8 00000000 E   *	    call   ExitProcess
  00000059			main ENDP
 				END main
-Microsoft (R) Macro Assembler Version 14.30.30706.0	    02/23/22 09:09:58
+Microsoft (R) Macro Assembler Version 14.30.30706.0	    02/23/22 09:40:19
 1Add and Subtract, Version 2         (AddSub2.asm	     Symbols 2 - 1
 
 

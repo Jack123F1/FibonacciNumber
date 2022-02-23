@@ -13,22 +13,22 @@ FIBNum    DWORD 30 DUP(?)
 .code
 main PROC
 mov    FIBNum,1
-mov    FIBNum+8,1
+mov    FIBNum+4,1
 mov    esi,OFFSET FIBNum
 mov    ecx,28
-add    esi,16
-mov    eax,[esi-16]
-call Writeint
-call Crlf
+add    esi,8
 mov    eax,[esi-8]
-call Writeint
+call WriteDec
+call Crlf
+mov    eax,[esi-4]
+call WriteDec
 call Crlf
 L1:
-mov    eax,[esi-16]
-add    eax,[esi-8]
+mov    eax,[esi-8]
+add    eax,[esi-4]
 mov    [esi],eax
-add    esi,8
-call Writeint
+add    esi,4
+call WriteDec
 call Crlf
 loop L1
 	exit
